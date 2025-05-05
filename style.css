@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(128deg, rgba(0, 147, 232, 1) 0%, rgba(40, 175, 209, 1) 25%, rgba(93, 206, 182, 1) 50%, rgba(130, 220, 177, 1) 75%, rgba(128, 208, 199, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 45px;
+    color: #fff;
+    margin-bottom: 50px;
+    margin-top: -50px;
+    font-weight: 500;
+}
+
+.hero h1 span {
+    color: #ff2963;
+    font-weight: 700;
+}
+
+textarea {
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+    background-color: #fff;
+    color: #000;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    padding: 20px;
+    border-radius: 10px;
+    resize: none;
+    margin-bottom: 30px;
+}
+
+textarea::placeholder {
+    color: #000;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.row {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    background-color: #ff2963;
+    padding: 10px 30px;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+button img {
+    width: 16px;
+    margin-right: 5px;
+}
+
+select {
+    flex: 1;
+    color: #fff;
+    background: #403d84;
+    height: 50px;
+    padding: 0 20px;
+    outline: 0;
+    border: 0;
+    border-radius: 35px;
+    appearance: none;
+    background-image: url('./assets/dropdown.png');
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 16px;
+    font-size: 15px;
+}
