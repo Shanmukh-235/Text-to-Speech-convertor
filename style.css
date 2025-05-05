@@ -8,7 +8,8 @@
 .hero {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(128deg, rgba(0, 147, 232, 1) 0%, rgba(40, 175, 209, 1) 25%, rgba(93, 206, 182, 1) 50%, rgba(130, 220, 177, 1) 75%, rgba(128, 208, 199, 1) 100%);
+    /* background: linear-gradient(128deg, rgba(0, 147, 232, 1) 0%, rgba(40, 175, 209, 1) 25%, rgba(93, 206, 182, 1) 50%, rgba(130, 220, 177, 1) 75%, rgba(128, 208, 199, 1) 100%); */
+    background: linear-gradient(to right, #fdc830, #f37335);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,47 +31,66 @@
     font-weight: 700;
 }
 
+/* Glassmorphism for all fields */
+textarea, select, button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Textarea */
 textarea {
     width: 100%;
     max-width: 600px;
     height: 200px;
-    background-color: #fff;
-    color: #000;
+    color: #fff;
     font-size: 15px;
-    border: 0;
-    outline: 0;
-    padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     resize: none;
     margin-bottom: 30px;
+    padding: 20px;
+    onfocus {
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+    }
 }
 
 textarea::placeholder {
-    color: #000;
+    color: #f0f0f0;
     font-size: 15px;
     font-weight: 300;
 }
 
+/* Row layout */
 .row {
     width: 100%;
     max-width: 600px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
+/* Button */
 button {
-    background-color: #ff2963;
-    padding: 10px 30px;
+    padding: 12px 30px;
     color: #fff;
-    border: 0;
-    outline: 0;
-    border-radius: 25px;
+    border-radius: 35px;
     font-size: 15px;
     font-weight: 500;
     cursor: pointer;
     display: flex;
     align-items: center;
+    border: none;
+    border: 1px solid #fff;
+}
+
+button:hover {
+    background: #ff2963;
 }
 
 button img {
@@ -78,14 +98,12 @@ button img {
     margin-right: 5px;
 }
 
+/* Select dropdown */
 select {
     flex: 1;
-    color: #fff;
-    background: #403d84;
+    color: #000;
     height: 50px;
     padding: 0 20px;
-    outline: 0;
-    border: 0;
     border-radius: 35px;
     appearance: none;
     background-image: url('./assets/dropdown.png');
@@ -93,4 +111,48 @@ select {
     background-position: right 20px center;
     background-size: 16px;
     font-size: 15px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+        margin-top: 0;
+    }
+
+    textarea {
+        height: 180px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    select, button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    textarea {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    select {
+        font-size: 14px;
+        padding: 0 15px;
+        background-position: right 15px center;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
 }
